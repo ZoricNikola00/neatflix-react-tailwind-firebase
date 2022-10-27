@@ -15,7 +15,7 @@ const SingleShow = ({id,title,backdrop_path,poster_path,overview,release_date}) 
         if(user?.email){
             setLike(p=>!p)
             await updateDoc(showId,{
-                savedShows:arrayUnion({
+                watchlist:arrayUnion({
                     id:id,
                     title:title,
                     img:poster_path,
