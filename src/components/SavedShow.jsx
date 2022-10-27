@@ -39,7 +39,7 @@ const SavedShow = ({id,img,title,bg,desc,date,shows}) => {
             <div className={`relative w-[90%] md:w-[80%] lg:w-[70%] h-[500px] rounded-lg overflow-hidden transition-transform duration-500 ${showModal?'translate-y-[0%] opacity-100':' opacity-0 translate-y-[-100%]'}`}>
                 <img className='w-full h-full object-cover' src={img_path+bg}/>
                 <div className='absolute top-0 left-0 w-full h-full bg-black/50'></div>
-                <AiOutlineClose onClick={_=>deleteShow(id)} className={`text-white text-3xl absolute top-3 right-3 transition-opacity duration-500 cursor-pointer ${show? 'opacity-1':'opacity-0'}`}/>
+                <AiOutlineClose onClick={_=>deleteShow(id)} className={`text-white text-3xl absolute top-3 right-3 transition-opacity z-50 duration-500 cursor-pointer`}/>
                 <div className='absolute text-white top-0 left-0 p-4 w-[90%] md:w-[70%]'>
                     <h1 className='font-bold text-xl lg:text-4xl'>{title}</h1>
                     <p className='text-gray-400 text-sm my-2'>{date}</p>
