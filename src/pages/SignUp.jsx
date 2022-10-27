@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useGlobalContext } from '../context'
 
 const SignUp = () => {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const navigate=useNavigate()
-
+  const {signUp}=useGlobalContext()
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
-      //await signUp(email, password)
+      await signUp(email, password)
       navigate('/')
     }
     catch(error){
