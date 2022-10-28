@@ -17,7 +17,7 @@ const Navbar = () => {
     
   return (
     <nav className='w-full h-auto absolute top-0 left-0 flex justify-between p-4 z-50'>
-        <Link className='z-40' to='/'><h1 className=' cursor-pointer text-4xl font-bold uppercase text-blue-900'>Neatflix</h1></Link>
+        <Link onClick={_=>setShowMenu(false)} className='z-40' to='/'><h1 className=' cursor-pointer text-4xl font-bold uppercase text-blue-900'>Neatflix</h1></Link>
         <div className='rounded-lg overflow-hidden w-[150px] h-[50px] md:flex hidden justify-between items-center px-3 border-2 border-white relative'>
             <span className='text-white'>TV</span>
             <span className='text-white'>MOVIE</span>
