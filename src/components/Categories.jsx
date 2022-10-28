@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Slider from 'react-slick'
 import SingleShow from './SingleShow';
 import {FaArrowCircleLeft,FaArrowCircleRight} from 'react-icons/fa'
+import { useGlobalContext } from '../context';
+import ReactLoading from 'react-loading';
 
 
 const settings = {
@@ -36,10 +38,13 @@ const moviesFetch=async(url)=>{
 }
 
 const Categories = ({category,endpoint}) => {
-    const {data:Movies,isLoading}=useQuery(['movie',category],()=>moviesFetch(endpoint),{refetchOnWindowFocus:false,refetchOnReconnect:false})
+    const {type}=useGlobalContext()
+    const {data:Movies,isLoading}=useQuery(['movie',category,type],()=>moviesFetch(endpoint),{refetchOnWindowFocus:false,refetchOnReconnect:false})
     const [slideRef,setSlideRef]=useState(null)
     const [show,setShow]=useState(false)
-
+    if(isLoading){
+        return <div className='flex justify-center items-center'><ReactLoading type='cylon' width={150}/></div>
+    }
   return (
     <div className='p-4 relative'onMouseEnter={_=>setShow(true)} onMouseLeave={_=>setShow(false)}>
         <h1 className='text-white text-2xl font-bold'>{category}</h1>
