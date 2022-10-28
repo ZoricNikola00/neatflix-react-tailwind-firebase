@@ -12,6 +12,12 @@ const AppContext=createContext()
 
 export const AppProvider=({children})=>{
     const [user,setUser]=useState()
+    const [swtch,setSwtch]=useState(true)
+    const [type,setType]=useState('movie')
+    
+    const handleSwitch=()=>{
+        setSwtch(p=>!p)
+    }
 
     const signUp=(email,password)=>{
         createUserWithEmailAndPassword(auth,email,password)
@@ -34,7 +40,10 @@ export const AppProvider=({children})=>{
          unsubscribe( )
         } 
      },[])
-    return <AppContext.Provider value={{signUp,signIn,logOut,user}}>{children}</AppContext.Provider>
+     useEffect(()=>{
+        swtch?setType('movie'):setType('tv')
+     },[swtch])
+    return <AppContext.Provider value={{type,swtch,handleSwitch,signUp,signIn,logOut,user}}>{children}</AppContext.Provider>
 }
 
 export const useGlobalContext=()=>{
