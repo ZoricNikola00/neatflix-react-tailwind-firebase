@@ -29,7 +29,7 @@ const SavedShow = ({id,img,title,bg,desc,date,shows}) => {
 
 
   return (
-    <div onClick={_=>setShowModal(true)} onMouseEnter={_=>setShow(true)} onMouseLeave={_=>setShow(false)} className='w-[250px] rounded-lg m-4 shadow-sm shadow-white overflow-hidden relative'>
+    <div onClick={_=>setShowModal(true)} onMouseEnter={_=>setShow(true)} onMouseLeave={_=>setShow(false)} className='w-[150px] md:w-[250px] rounded-lg m-4 shadow-sm shadow-white overflow-hidden relative'>
         <img className='w-full' src={img_path+img}/>
         <div className={`flex items-center justify-center absolute top-0 left-0 h-full transition duration-500 w-full ${show && 'bg-black bg-opacity-[80%]'}`}>
             <h1 className={`${show?'opacity-1 translate-y-0':'opacity-0 translate-y-[50%]'} w-[80%] text-center text-lg md:text-xl font-bold  text-white transition duration-500`}>{title}</h1>
