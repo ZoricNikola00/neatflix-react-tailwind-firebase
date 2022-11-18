@@ -4,7 +4,7 @@ import Main from '../components/Main'
 import { useGlobalContext } from '../context'
 
 const Home = () => {
-    const myKey='72de8895bb64376912ef844faac64a10'
+    const myKey=TMDB_API_KEY
     const {type}=useGlobalContext()
     const endpoints={
    
