@@ -6,19 +6,19 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDTHBU5wmWPylf3A6kfWBt1x7WgnTREZWI",
+  apiKey: FIREBASE_APIKEY,
 
-  authDomain: "neatflix-8cc61.firebaseapp.com",
+  authDomain: FIREBASE_AUTH,
 
-  projectId: "neatflix-8cc61",
+  projectId: FIREBASE_PROJECTID,
 
-  storageBucket: "neatflix-8cc61.appspot.com",
+  storageBucket: FIREBASE_STORAGE_BUCKET,
 
-  messagingSenderId: "641900175851",
+  messagingSenderId: FIREBASE_MSG_ID,
 
-  appId: "1:641900175851:web:440fa0dafe8827bb3af9ae",
+  appId: FIREBASE_APP_ID,
 
-  measurementId: "G-MTMG32TS6G"
+  measurementId: FIREBASE_MESS_ID
 
 };
 
